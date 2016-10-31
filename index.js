@@ -45,7 +45,7 @@ app.post(`/api/${PACKAGE_NAME}/:route`, _(function* (req, res) {
     try {
         response            = yield request(routeHash[req.params.route], req);
         r.callback          = 'success';
-        r.contextWrites[to] = response == null ? 'Item not found' : JSON.stringify(response);
+        r.contextWrites[to] = response == null ? 'Item not found' : JSON.parse(response);
     } catch(e) {
         r.callback          = 'error';
         r.contextWrites[to] =  typeof e == 'object' ? e.message ? e.message : JSON.stringify(e) : e;

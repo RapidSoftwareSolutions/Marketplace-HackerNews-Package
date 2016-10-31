@@ -19,9 +19,9 @@ module.exports = (route, req) => {
 
     request(uri, (err, response, reslut) => {
         if(!err && response.statusCode == 200) 
-            defered.resolve(JSON.parse(reslut));
+            defered.resolve(reslut);
         else 
-            defered.reject(err || JSON.parse(reslut));
+            defered.reject(err || reslut);
     });
 
     return defered.promise;
