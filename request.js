@@ -12,7 +12,7 @@ module.exports = (route, req) => {
         if(!req.body.args[param])
             throw new Error(param + ' is required.');
 
-        uri= '/' + req.body.args[param];
+        uri += '/' + req.body.args[param];
     }
 
     uri += '.json';
