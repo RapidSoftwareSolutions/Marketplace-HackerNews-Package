@@ -1,6 +1,14 @@
 'use strict';
 global.PACKAGE_NAME = "HackerNews";
 
+global.ValidationError = function(fields) {
+    this.text   = 'Please, check and fill in required fields';
+    this.fields = fields || [];
+}
+
+ValidationError.prototype = Object.create(Error.prototype);
+ValidationError.prototype.constructor = ValidationError;
+
 const express       = require('express');
 const bodyParser    = require('body-parser');
 const request       = require('./request.js');

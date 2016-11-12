@@ -10,7 +10,7 @@ module.exports = (route, req) => {
         let param = Object.keys(route.params)[0];
 
         if(!req.body.args[param])
-            throw new Error(param + ' is required.');
+            throw new ValidationError([param])
 
         uri += '/' + req.body.args[param];
     }
