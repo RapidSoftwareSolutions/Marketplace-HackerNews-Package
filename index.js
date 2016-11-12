@@ -57,7 +57,7 @@ app.post(`/api/${PACKAGE_NAME}/:route`, _(function* (req, res) {
     } catch(e) {
 
         r.callback          = 'error';
-        r.contextWrites[to] =  typeof e == 'object' ? e.message ? e.message : JSON.stringify(e) : e;
+        r.contextWrites[to] =  typeof e == 'object' ? e.message ? e.message : e : e;
     }
 
     res.status(200).send(r);
