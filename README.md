@@ -20,7 +20,7 @@ Stories, comments, jobs, Ask HNs and even polls are just items.
 
 | Field | Type  | Description
 |-------|-------|----------
-| itemId| Number| The item's unique id. Required.
+| itemId| Number| Required: The item's unique id. Required.
 
 <a name="getUser"/>
 ## HackerNews.getUser
@@ -28,7 +28,7 @@ Users are identified by case-sensitive ids.
 
 | Field   | Type  | Description
 |---------|-------|----------
-| username| String| The user's unique username. Case-sensitive. Required.
+| username| String| Required: The user's unique username. Case-sensitive. Required.
 
 <a name="getTopStories"/>
 ## HackerNews.getTopStories

@@ -17,7 +17,8 @@ res.status(200).send({
         {
           "name": "itemId",
           "type": "Number",
-          "info": "The item's unique id. Required."
+          "info": "The item's unique id. Required.",
+          "required": true
         }
       ],
       "callbacks": [
@@ -38,7 +39,8 @@ res.status(200).send({
         {
           "name": "username",
           "type": "String",
-          "info": "The user's unique username. Case-sensitive. Required."
+          "info": "The user's unique username. Case-sensitive. Required.",
+          "required": true
         }
       ],
       "callbacks": [
