@@ -2,6 +2,7 @@ module.exports.do = function(req, res){
 res.status(200).send({
   "package": "HackerNews",
   "tagline": "HackerNews API Package",
+  "keywords": ["API", "developer", "hacker", "news", "programmer", "programming", "publication", "update"],
   "description": "Public Hacker News data in near real time.",
   "image": "https://news.ycombinator.com/favicon.ico",
   "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-HackerNews-Package",
