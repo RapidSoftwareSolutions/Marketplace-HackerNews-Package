@@ -2,7 +2,8 @@
 global.PACKAGE_NAME = "HackerNews";
 
 global.ValidationError = function(fields) {
-    this.text   = 'Please, check and fill in required fields';
+    this.status_code = 'REQUIRED_FIELDS',
+    this.status_msg  = 'Please, check and fill in required fields';
     this.fields = fields || [];
 }
 
@@ -45,19 +46,25 @@ app.post(`/api/${PACKAGE_NAME}/:route`, _(function* (req, res) {
 
     if(!routeHash[req.params.route]) {
         r.callback          = 'error';
-        r.contextWrites[to] = 'Action not found.';
+        r.contextWrites[to] = '404';
         res.status(200).send(r);
         return;
     }
 
     try {
-        response            = yield request(routeHash[req.params.route], req);
-        r.callback          = 'success';
-        r.contextWrites[to] = response == null ? 'Item not found' : response;
-    } catch(e) {
+        response = yield request(routeHash[req.params.route], req);
 
+        if(response == null) 
+            throw new Error('Item not found');
+
+        r.callback          = 'success';
+        r.contextWrites[to] = response
+    } catch(e) {
         r.callback          = 'error';
-        r.contextWrites[to] =  typeof e == 'object' ? e.message ? e.message : e : e;
+        r.contextWrites[to] = {
+            status_code: 'API_ERROR',
+            status_msg: e.message || e
+        }
     }
 
     res.status(200).send(r);
