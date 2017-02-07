@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/HackerNews/functions?utm_source=RapidAPIGitHub_HackerNewsFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # HackerNews Package
 Public Hacker News data in near real time.
 * Domain: news.ycombinator.com
