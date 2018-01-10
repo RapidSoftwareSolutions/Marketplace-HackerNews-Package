@@ -116,21 +116,6 @@ res.status(200).send({
       ]
     },
     {
-      "name": "getAskStories",
-      "description": "Up to 200 of the latest Ask HN stories.",
-      "args": [],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
       "name": "getShowStories",
       "description": "Up to 200 of the latest Show HN stories.",
       "args": [],
